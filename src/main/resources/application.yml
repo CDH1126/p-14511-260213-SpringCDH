@@ -10,7 +10,7 @@ spring:
 
   jpa:
     hibernate:
-      ddl-auto: create # 테이블 변경사항 자동으로 반영
+      ddl-auto: update # 기존 사항 유지, 변경사항이 있을 때마다 적용
     show-sql: true
 
 server:
