@@ -2,17 +2,17 @@ package com.back.domain.post.service;
 
 import com.back.domain.post.entity.Post;
 import com.back.domain.post.repository.PostRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Component;
+import lombok.RequiredArgsConstructor;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.Optional;
 
-@Component // Bean 객체 등록
+@Service // Component 와 같지만 직관성을 위해 변경
+@RequiredArgsConstructor
 public class PostService {
 
-    @Autowired // Bean 객체로 등록하지 않으면 스프링부트가 관리하지 않음
-    private PostRepository postRepository;
+    private final PostRepository postRepository;
 
     public Post write(String title, String content) {
 

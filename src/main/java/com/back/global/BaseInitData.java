@@ -4,16 +4,16 @@ package com.back.global;
 import com.back.domain.post.entity.Post;
 import com.back.domain.post.repository.PostRepository;
 import com.back.domain.post.service.PostService;
-import org.springframework.beans.factory.annotation.Autowired;
+import lombok.RequiredArgsConstructor;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
 @Configuration
+@RequiredArgsConstructor
 public class BaseInitData {
 
-    @Autowired // S B 가 컨테이너에서 해당 타입을 찾아 객체에 넣어줌
-    private PostService postService;
+    private final PostService postService;
 
     @Bean
     ApplicationRunner initDataRunner() {
