@@ -1,4 +1,4 @@
-package com.back.domain.wiseSaying.entity;
+package com.back.domain.post.entity;
 
 import jakarta.persistence.*;
 import lombok.NoArgsConstructor;

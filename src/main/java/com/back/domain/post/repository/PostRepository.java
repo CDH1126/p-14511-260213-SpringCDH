@@ -1,6 +1,6 @@
-package com.back.domain.wiseSaying.repository;
+package com.back.domain.post.repository;
 
-import com.back.domain.wiseSaying.entity.Post;
+import com.back.domain.post.entity.Post;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 // 인터페이스 ==> 모든 메서드가 추상메서드인 추상 클래스
