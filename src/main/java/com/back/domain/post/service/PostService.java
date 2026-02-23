@@ -25,7 +25,9 @@ public class PostService {
     public Post modify(Post post, String title, String content) {
         post.setTitle(title);
         post.setContent(content);
-        return postRepository.save(post);
+
+        // return postRepository.save(post);
+        return post; // 더티체킹 방식으로 재정의
     }
 
     public Optional<Post> findById(int id) {
