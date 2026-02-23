@@ -1,8 +1,11 @@
 package com.back.domain.wiseSaying.entity;
 
 import jakarta.persistence.*;
+import lombok.NoArgsConstructor;
 
 @Entity // 테이블과 연동하려면 사용해야 되는 어노테이션
+// @Entity 사용 시 생성자가 필수 (없을 경우 기본 생성자)
+@NoArgsConstructor
 public class Post {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

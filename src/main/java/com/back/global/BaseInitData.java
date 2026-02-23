@@ -18,6 +18,11 @@ public class BaseInitData {
     ApplicationRunner initDataRunner() {
         // ApplicationRunner - 스프링부트의 초기 작업 지시
         return args -> {
+
+            if(postRepository.count() > 0) {
+                return;
+            }
+
             System.out.println("초기 데이터를 로딩합니다.");
 
             Post post1 = new Post("제목1", "내용1");

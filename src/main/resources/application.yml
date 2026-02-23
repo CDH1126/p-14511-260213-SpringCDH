@@ -9,6 +9,11 @@ spring:
     driver-class-name: org.h2.Driver
 
   jpa:
+    properties: # properties 설정을 통해 콘솔창에 잘 보이도록 함
+      hibernate:
+        format_sql: true
+        highlight_sql: true
+        use_sql_comments: true
     hibernate:
       ddl-auto: update # 기존 사항 유지, 변경사항이 있을 때마다 적용
     show-sql: true
