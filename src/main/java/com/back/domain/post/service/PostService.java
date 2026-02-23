@@ -6,6 +6,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
+import java.util.Optional;
 
 @Component // Bean 객체 등록
 public class PostService {
@@ -19,8 +20,8 @@ public class PostService {
         return postRepository.save(post);
     }
 
-    public Post findById(int id) {
-        return postRepository.findById(id).orElse(null); // 없을 경우 null 반환
+    public Optional<Post> findById(int id) {
+        return postRepository.findById(id);
     }
 
     public List<Post> findAll() {

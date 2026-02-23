@@ -3,6 +3,7 @@ package com.back.global;
 
 import com.back.domain.post.entity.Post;
 import com.back.domain.post.repository.PostRepository;
+import com.back.domain.post.service.PostService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.context.annotation.Bean;
@@ -12,7 +13,7 @@ import org.springframework.context.annotation.Configuration;
 public class BaseInitData {
 
     @Autowired // S B 가 컨테이너에서 해당 타입을 찾아 객체에 넣어줌
-    private PostRepository postRepository;
+    private PostService postService;
 
     @Bean
     ApplicationRunner initDataRunner() {
@@ -26,19 +27,15 @@ public class BaseInitData {
 
     void work1() {
 
-        if(postRepository.count() > 0) {
+        if(postService.count() > 0) {
             return;
         }
-
-        Post post1 = new Post("제목1", "내용1");
-        postRepository.save(post1);
-
-        Post post2 = new Post("제목2", "내용2");
-        postRepository.save(post2);
+        postService.write("제목1", "내용1");
+        postService.write("제목2", "내용2");
     }
 
     void work2() {
-        postRepository.findById(1);
+        postService.findById(1);
         // select * from post where id = 1;
     }
 
