@@ -4,6 +4,9 @@ import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.springframework.data.annotation.CreatedDate;
+import org.springframework.data.annotation.LastModifiedDate;
+import org.springframework.data.jpa.domain.support.AuditingEntityListener;
 
 import java.time.LocalDateTime;
 
@@ -12,6 +15,7 @@ import java.time.LocalDateTime;
 @NoArgsConstructor
 @Setter
 @Getter
+@EntityListeners(AuditingEntityListener.class)
 public class Post {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -24,7 +28,10 @@ public class Post {
     // TEXT 타입 사용 시 직접 명시를 해야 함
     @Column(columnDefinition = "TEXT", nullable = false)
     private String content = "";
+
+    @CreatedDate // 데이터 생성 날짜 자동 생성
     private LocalDateTime createDate;
+    @LastModifiedDate // 데이터 수정 시간 자동 반영
     private LocalDateTime modifyDate;
 
     public Post(String title, String content) {
