@@ -20,6 +20,12 @@ public class PostService {
         return postRepository.save(post);
     }
 
+    public Post modify(Post post, String title, String content) {
+        post.setTitle(title);
+        post.setContent(content);
+        return postRepository.save(post);
+    }
+
     public Optional<Post> findById(int id) {
         return postRepository.findById(id);
     }

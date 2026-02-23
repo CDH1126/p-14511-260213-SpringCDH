@@ -1,13 +1,17 @@
 package com.back.domain.post.entity;
 
 import jakarta.persistence.*;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
+import lombok.Setter;
 
 import java.time.LocalDateTime;
 
 @Entity // 테이블과 연동하려면 사용해야 되는 어노테이션
 // @Entity 사용 시 생성자가 필수 (없을 경우 기본 생성자)
 @NoArgsConstructor
+@Setter
+@Getter
 public class Post {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)

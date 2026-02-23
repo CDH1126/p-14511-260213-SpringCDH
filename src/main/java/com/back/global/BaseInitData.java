@@ -1,5 +1,6 @@
 package com.back.global;
 
+import com.back.domain.post.entity.Post;
 import com.back.domain.post.service.PostService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -55,4 +56,11 @@ public class BaseInitData {
         postService.findById(1);
         // select * from post where id = 1;
     }
+
+    @Transactional // 기본값이 readOnly 가 되었기 때문에 Transactional 지정
+    void work3() {
+        Post post = postService.findById(1).get();
+        postService.modify(post, "제목1-1", "내용1-1");
+    }
+
 }
