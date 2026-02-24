@@ -24,19 +24,19 @@ public class PostRepositoryTest {
         Post post = postRepository.findById(2).get();
 
         assertThat(post.getId()).isEqualTo(2);
-        assertThat(post.getTitle()).isEqualTo("제목2");
-        assertThat(post.getContent()).isEqualTo("내용2");
+        assertThat(post.getTitle()).isEqualTo("테스트 제목2");
+        assertThat(post.getContent()).isEqualTo("테스트 내용2");
     }
 
 
     @Test
     void t2() {
-        Post post = new Post("제목3", "내용3");
+        Post post = new Post("테스트 제목3", "테스트 내용3");
         Post savedPost = postRepository.save(post);
 
         assertThat(savedPost.getId()).isNotNull();
-        assertThat(savedPost.getTitle()).isEqualTo("제목3");
-        assertThat(savedPost.getContent()).isEqualTo("내용3");
+        assertThat(savedPost.getTitle()).isEqualTo("테스트 제목3");
+        assertThat(savedPost.getContent()).isEqualTo("테스트 내용3");
     }
 
     @Test

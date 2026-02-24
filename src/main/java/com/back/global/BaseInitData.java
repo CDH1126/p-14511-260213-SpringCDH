@@ -25,15 +25,18 @@ public class BaseInitData {
     private final PostService postService;
 
     @Bean
-    ApplicationRunner initDataRunner() {
+    ApplicationRunner devInitData() {
+        // Bean 객체로 등록 시 스프링에서 파스칼표기법을 소문자로 변경하기 때문에 아예 다른 이름 사용
         // ApplicationRunner - 스프링부트의 초기 작업 지시
         return args -> {
 
             self.work1();
             self.work2();
+            self.work3();
         };
     }
 
+    @Transactional
     void work1() {
 
         if (postService.count() > 0) {
