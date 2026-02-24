@@ -2,13 +2,10 @@ package com.back.global.initData;
 
 import com.back.domain.post.entity.Post;
 import com.back.domain.post.service.PostService;
-import com.back.global.BaseInitData;
 import lombok.RequiredArgsConstructor;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.context.annotation.Lazy;
 import org.springframework.context.annotation.Profile;
 import org.springframework.transaction.annotation.Transactional;
 

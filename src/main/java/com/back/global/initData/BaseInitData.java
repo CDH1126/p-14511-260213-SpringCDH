@@ -1,4 +1,4 @@
-package com.back.global;
+package com.back.global.initData;
 
 import com.back.domain.post.entity.Post;
 import com.back.domain.post.service.PostService;
