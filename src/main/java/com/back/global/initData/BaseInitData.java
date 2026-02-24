@@ -32,8 +32,8 @@ public class BaseInitData {
         // ApplicationRunner - 스프링부트의 초기 작업 지시
         return args -> {
 
-            self.work1();
             self.work2();
+            self.work1();
 
         };
     }
@@ -46,8 +46,8 @@ public class BaseInitData {
         }
 
 
-        postService.write("제목1", "내용1");
-        postService.write("제목2", "내용2");
+        postService.write(3,"제목1", "내용1");
+        postService.write(4,"제목2", "내용2");
     }
 
     @Transactional

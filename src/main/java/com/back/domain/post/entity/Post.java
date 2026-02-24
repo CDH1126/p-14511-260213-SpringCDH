@@ -12,7 +12,6 @@ import lombok.Setter;
 @Setter
 @Getter
 public class Post extends BaseEntity {
-
     @Column(length = 100, nullable = false)
     private String title;
 
@@ -20,9 +19,10 @@ public class Post extends BaseEntity {
     @Column(columnDefinition = "TEXT", nullable = false)
     private String content;
 
+    private int authorId;
 
-
-    public Post(String title, String content) {
+    public Post(int authorId, String title, String content) {
+        this.authorId = authorId;
         this.title = title;
         this.content = content;
     }

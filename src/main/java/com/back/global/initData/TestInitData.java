@@ -21,8 +21,8 @@ public class TestInitData {
     ApplicationRunner testInitDataRunner() {
         return args -> {
 
-            Post p1 = postService.write("테스트 제목1", "테스트 내용1");
-            Post p2 = postService.write("테스트 제목2", "테스트 내용2");
+            Post p1 = postService.write(3,"테스트 제목1", "테스트 내용1");
+            Post p2 = postService.write(4, "테스트 제목2", "테스트 내용2");
 
         };
     }
