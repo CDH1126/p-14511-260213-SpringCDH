@@ -11,7 +11,7 @@ import java.time.LocalDateTime;
 @MappedSuperclass // 공통 필드를 여러 엔티티에서 상속받아 사용하기 위한 상속용 어노테이션
 @Getter
 @EntityListeners(AuditingEntityListener.class)
-public class BaseEntity {
+abstract public class BaseEntity {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
