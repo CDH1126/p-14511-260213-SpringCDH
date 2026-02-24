@@ -11,14 +11,14 @@ import org.springframework.transaction.annotation.Transactional;
 import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 @SpringBootTest
+@Transactional
+@Rollback
 public class PostRepositoryTest {
 
     @Autowired
     private PostRepository postRepository;
 
     @Test
-    @Transactional
-    @Rollback
     void t1 () {
         Post post = postRepository.findById(2).get();
 
@@ -29,8 +29,6 @@ public class PostRepositoryTest {
 
 
     @Test
-    @Transactional
-    @Rollback
     void t2() {
         Post post = new Post("제목3", "내용3");
         Post savedPost = postRepository.save(post);
@@ -41,8 +39,6 @@ public class PostRepositoryTest {
     }
 
     @Test
-    @Transactional
-    @Rollback
     void t3() {
         long cnt = postRepository.count();
         assertThat(cnt).isEqualTo(2);
